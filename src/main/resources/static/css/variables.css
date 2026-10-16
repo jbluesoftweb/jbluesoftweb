@@ -1,0 +1,15 @@
+:root {
+
+--bg-base: #0B1220;
+--bg-secondary: #121B2E;
+--accent-primary: #2E7DF6;
+--accent-secondary: #5FE0C0;
+--text-primary: #E8ECF4;
+--text-secondary: #8A93A6;
+
+--font-heading: 'Space Grotesk', sans-serif;
+--font-body: 'Inter', sans-serif;
+--font-mono: 'JetBrains Mono', monospace;
+
+    
+}

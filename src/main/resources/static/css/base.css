@@ -1,0 +1,41 @@
+/* Tipografías de Google Fonts: Space Grotesk (títulos), Inter (cuerpo) y JetBrains Mono (código/.mono) */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Reset global: box-sizing consistente y sin márgenes/padding por defecto del navegador */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos base del body, usando los tokens definidos en variables.css */
+body {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+}
+
+/* Todos los encabezados usan la tipografía de títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+}
+
+/* Clase utilitaria para texto con fuente monoespaciada */
+.mono {
+    font-family: var(--font-mono);
+}
+
+/* Respeta la preferencia de accesibilidad "reduce motion" */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    /* Hero es estático, sin animaciones */
+}
