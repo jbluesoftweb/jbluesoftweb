@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<footer th:fragment="footer" class="site-footer">
+    <div class="container">
+        <div class="row footer-row">
+
+            <div class="col-12 col-sm-12 col-lg-12">
+                <p class="footer-copy mono text-center" th:text="|© JBLUESOFT 2024 - ${#dates.year(#dates.createNow())}|">© JBLUESOFT 2024 - 2026</p>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
