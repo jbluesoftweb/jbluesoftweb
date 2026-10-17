@@ -2,6 +2,7 @@ package lat.jbluesoft.jbluesoftweb.controller;
 
 import java.time.Year;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import lat.jbluesoft.jbluesoftweb.model.Sistema;
 import lat.jbluesoft.jbluesoftweb.service.SistemaService;
@@ -13,6 +14,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.containsString;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -51,6 +53,18 @@ class HomeControllerTest {
                 .andExpect(content().string(containsString("<title>JBlueSoft | Inicio</title>")))
                 .andExpect(content().string(containsString("© JBLUESOFT 2024 - " + Year.now().getValue())))
                 .andExpect(content().string(containsString("integrity=\"sha384-")));
+    }
+
+    @Test
+    void homeReferenciaRecursosVersionadosPorContenido() throws Exception {
+        String html = mockMvc.perform(get("/"))
+                .andExpect(status().isOk())
+                .andReturn().getResponse().getContentAsString();
+
+        assertTrue(Pattern.compile("href=\"/css/styles-[0-9a-f]+\\.css\"").matcher(html).find(),
+                "styles.css debe referenciarse con hash de contenido");
+        assertTrue(Pattern.compile("src=\"/js/main-[0-9a-f]+\\.js\"").matcher(html).find(),
+                "main.js debe referenciarse con hash de contenido");
     }
 
     @Test

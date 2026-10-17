@@ -33,7 +33,7 @@
                 <div class="row portfolio-row">
                     <div class="col-12 col-md-6 col-lg-4" th:each="s : ${sistemas}">
                         <div class="portfolio-card">
-                            <img th:src="@{${s.imagen}}" th:alt="${s.titulo}" src="" alt="" class="portfolio-image">
+                            <img th:src="@{${s.imagen}}" th:alt="${s.titulo}" src="" alt="" width="1600" height="900" loading="lazy" class="portfolio-image">
                             <div class="portfolio-card-body">
                                 <h4 class="portfolio-title" th:text="${s.titulo}">Sistema</h4>
                                 <p class="portfolio-text" th:text="${s.descripcionCorta}">Descripción corta.</p>
