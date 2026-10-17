@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout(~{::title}, ~{::main})}">
+<head>
+    <title th:text="${sistema.titulo} + ' | JBlueSoft'">Sistema | JBlueSoft</title>
+</head>
+<body>
+
+<main>
+
+    <section class="sistema-detalle">
+        <div class="container">
+
+            <div class="row sistema-detalle-row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <h1 class="sistema-detalle-titulo" th:text="${sistema.titulo}">Sistema</h1>
+                    <p class="sistema-detalle-resumen" th:text="${sistema.descripcionCorta}">Descripción corta.</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <img th:src="@{${sistema.imagen}}" th:alt="${sistema.titulo}" src="" alt="" class="sistema-detalle-imagen">
+                </div>
+            </div>
+
+            <p class="sistema-detalle-descripcion" th:text="${sistema.descripcionLarga}">Descripción larga.</p>
+
+            <div class="sistema-detalle-videos" th:if="${sistema.youtubeListaId != null}">
+                <h2 class="sistema-detalle-subtitulo">Videos</h2>
+                <div class="ratio ratio-16x9">
+                    <iframe th:src="|https://www.youtube-nocookie.com/embed/videoseries?list=${sistema.youtubeListaId}|"
+                            th:title="|Lista de videos de ${sistema.titulo}|"
+                            title="Lista de videos"
+                            loading="lazy"
+                            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="sistema-detalle-enlaces" th:if="${sistema.repoUrl != null or sistema.sitioUrl != null}">
+                <a th:if="${sistema.repoUrl != null}" th:href="${sistema.repoUrl}" href="#"
+                   target="_blank" rel="noopener noreferrer" class="btn-outline-custom">
+                    <i class="bi bi-github"></i> Ver en GitHub
+                </a>
+                <a th:if="${sistema.sitioUrl != null}" th:href="${sistema.sitioUrl}" href="#"
+                   target="_blank" rel="noopener noreferrer" class="btn-outline-custom">
+                    <i class="bi bi-box-arrow-up-right"></i> Visitar sitio web
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>

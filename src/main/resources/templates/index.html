@@ -31,101 +31,13 @@
 
             <div class="container">
                 <div class="row portfolio-row">
-                    <div class="col-12 col-md-6 col-lg-4">
+                    <div class="col-12 col-md-6 col-lg-4" th:each="s : ${sistemas}">
                         <div class="portfolio-card">
-                            <img th:src="@{/assets/img/portafolio-ameztravel.webp}" alt="Ameztravel - Agencia de viajes" class="portfolio-image">
+                            <img th:src="@{${s.imagen}}" th:alt="${s.titulo}" src="" alt="" class="portfolio-image">
                             <div class="portfolio-card-body">
-                                <h4 class="portfolio-title">ERP-ADMIN</h4>
-                                <p class="portfolio-text">ERP administrativo genérico: gestión de personal, asistencia y reportes consolidados para cualquier institución u organización — pública o privada.</p>
-                                <a href="https://github.com/jbluesoftweb/erp-admin" target="_blank" rel="noopener noreferrer" class="portfolio-link">Ver proyecto <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="portfolio-card">
-                            <img th:src="@{/assets/img/drivex.webp}" alt="DriveX" class="portfolio-image">
-                            <div class="portfolio-card-body">
-                                <h4 class="portfolio-title">DriveX</h4>
-                                <p class="portfolio-text">Aplicación de gestión de archivos en la nube.</p>
-                                <a href="#" class="portfolio-link">Ver proyecto <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="portfolio-card">
-                            <img th:src="@{/assets/img/finanzasya.webp}" alt="FinanzasYa" class="portfolio-image">
-                            <div class="portfolio-card-body">
-                                <h4 class="portfolio-title">FinanzasYa</h4>
-                                <p class="portfolio-text">Aplicación de finanzas personales. Controla tus gastos.</p>
-                                <a href="#" class="portfolio-link">Ver proyecto <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="portfolio-card">
-                            <img th:src="@{/assets/img/finanzasya.webp}" alt="FinanzasYa" class="portfolio-image">
-                            <div class="portfolio-card-body">
-                                <h4 class="portfolio-title">FinanzasYa</h4>
-                                <p class="portfolio-text">Aplicación de finanzas personales. Controla tus gastos.</p>
-                                <a href="#" class="portfolio-link">Ver proyecto <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="portfolio-card">
-                            <img th:src="@{/assets/img/finanzasya.webp}" alt="FinanzasYa" class="portfolio-image">
-                            <div class="portfolio-card-body">
-                                <h4 class="portfolio-title">FinanzasYa</h4>
-                                <p class="portfolio-text">Aplicación de finanzas personales. Controla tus gastos.</p>
-                                <a href="#" class="portfolio-link">Ver proyecto <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="portfolio-card">
-                            <img th:src="@{/assets/img/finanzasya.webp}" alt="FinanzasYa" class="portfolio-image">
-                            <div class="portfolio-card-body">
-                                <h4 class="portfolio-title">FinanzasYa</h4>
-                                <p class="portfolio-text">Aplicación de finanzas personales. Controla tus gastos.</p>
-                                <a href="#" class="portfolio-link">Ver proyecto <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="portfolio-card">
-                            <img th:src="@{/assets/img/finanzasya.webp}" alt="FinanzasYa" class="portfolio-image">
-                            <div class="portfolio-card-body">
-                                <h4 class="portfolio-title">FinanzasYa</h4>
-                                <p class="portfolio-text">Aplicación de finanzas personales. Controla tus gastos.</p>
-                                <a href="#" class="portfolio-link">Ver proyecto <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="portfolio-card">
-                            <img th:src="@{/assets/img/finanzasya.webp}" alt="FinanzasYa" class="portfolio-image">
-                            <div class="portfolio-card-body">
-                                <h4 class="portfolio-title">FinanzasYa</h4>
-                                <p class="portfolio-text">Aplicación de finanzas personales. Controla tus gastos.</p>
-                                <a href="#" class="portfolio-link">Ver proyecto <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="portfolio-card">
-                            <img th:src="@{/assets/img/finanzasya.webp}" alt="FinanzasYa" class="portfolio-image">
-                            <div class="portfolio-card-body">
-                                <h4 class="portfolio-title">FinanzasYa</h4>
-                                <p class="portfolio-text">Aplicación de finanzas personales. Controla tus gastos.</p>
-                                <a href="#" class="portfolio-link">Ver proyecto <i class="bi bi-arrow-right"></i></a>
+                                <h4 class="portfolio-title" th:text="${s.titulo}">Sistema</h4>
+                                <p class="portfolio-text" th:text="${s.descripcionCorta}">Descripción corta.</p>
+                                <a th:href="@{/sistemas/{slug}(slug=${s.slug})}" href="#" class="portfolio-link">Ver proyecto <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

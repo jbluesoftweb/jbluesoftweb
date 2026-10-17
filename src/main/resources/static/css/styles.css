@@ -552,3 +552,90 @@
         padding-bottom: 3rem;
     }
 }
+
+/* ===== DETALLE DE SISTEMA ===== */
+/* El navbar es fixed (68px aprox.), por eso el contenido empieza debajo */
+.sistema-detalle {
+    background: var(--bg-base);
+    padding-top: calc(68px + 3rem);
+    padding-bottom: 5rem;
+    min-height: calc(100vh - 68px);
+}
+
+.sistema-detalle-row {
+    row-gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.sistema-detalle-titulo {
+    color: var(--text-primary);
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.sistema-detalle-resumen {
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+.sistema-detalle-imagen {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    display: block;
+}
+
+/* pre-line respeta los saltos de línea del texto sin usar th:utext */
+.sistema-detalle-descripcion {
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.8;
+    white-space: pre-line;
+    margin-bottom: 3rem;
+}
+
+.sistema-detalle-subtitulo {
+    color: var(--text-primary);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 1.5rem;
+}
+
+.sistema-detalle-videos {
+    margin-bottom: 3rem;
+}
+
+.sistema-detalle-videos .ratio {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background: var(--bg-secondary);
+}
+
+.sistema-detalle-enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.sistema-detalle-enlaces i {
+    margin-right: 0.5rem;
+}
+
+/* Página de error 404 */
+.sistema-404 {
+    text-align: center;
+}
+
+.sistema-404 .sistema-detalle-resumen {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 767.98px) {
+    .sistema-detalle {
+        padding-top: calc(68px + 2rem);
+        padding-bottom: 3rem;
+    }
+}

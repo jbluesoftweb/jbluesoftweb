@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout(~{::title}, ~{::main})}">
+<head>
+    <title>No encontrado | JBlueSoft</title>
+</head>
+<body>
+
+<main>
+
+    <section class="sistema-detalle sistema-404">
+        <div class="container">
+            <h1 class="sistema-detalle-titulo">Sistema no encontrado</h1>
+            <p class="sistema-detalle-resumen">El contenido que buscas no existe o ya no está disponible.</p>
+            <a th:href="@{/}" href="/" class="btn-outline-custom">
+                <i class="bi bi-house"></i> Volver al inicio
+            </a>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>
